@@ -8,4 +8,7 @@ fvsw.py works with firmata arduino.
 You should install StandardFirmata for arduino Nano.
 In fvsw.py, locating index-finger-tip in the left-top corner lights the LED.
 
+fvsw.py works with firmata arduino.
+In fvsw.py, locating index-finger-tip in the left-top corner toggles the LED-lighting.
+
 Firmata is a protocol for communicating with microcontrollers from software on a computer (or smartphone/tablet, etc).
