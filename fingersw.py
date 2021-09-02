@@ -1,6 +1,5 @@
 # original:https://github.com/pdhruv93/computer-vision/tree/main/fingers-count
 # original is modified by takefuji
-# using arduino IDE->File->Examples->Firmata->StandardFirmata should be installed.
 import mediapipe as mp
 import cv2
 import math
