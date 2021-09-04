@@ -24,6 +24,8 @@ In firmata, getpin(X:Y:Z) is to set pin Y: analog 'a' or digital 'd' for X,
 Y represents pin number, Z is pin type: 'i' for input,
 'o' for output, 'p' for pwm, 's' for servo.
 
+get_pin('d:2:s') means pin#2 is used for digital servo.
+
 # fvsw.py
 In fvsw.py, when placing the tip of your index finger on the upper left corner, 
 the LED will light up.
