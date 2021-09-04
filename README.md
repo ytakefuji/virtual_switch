@@ -20,6 +20,10 @@ from software on a computer (or smartphone/tablet, etc).
 
 You should install StandardFirmata for arduino Nano.
 
+In firmata, getpin(X:Y:Z) is to set pin Y: analog 'a' or digital 'd' for X,
+Y represents pin number, Z is pin type: 'i' for input,
+'o' for output, 'p' for pwm, 's' for servo.
+
 # fvsw.py
 In fvsw.py, when placing the tip of your index finger on the upper left corner, 
 the LED will light up.
