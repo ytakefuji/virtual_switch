@@ -2,6 +2,11 @@
 This repository shows how to integrate artificial intelligence libraries such as mediapipe
 with Arduino Nano.
 
+Read the following site for hand gesture recognition:
+
+https://github.com/ytakefuji/mediapipe_hand
+
+
 Three Python programs (fingersw.py, fvsw.py, fvswt.py) are to control an LED.
 
 fservo.py is to control a servo with digital pin#2 on Arduino by index-finger-tip.
