@@ -15,7 +15,7 @@ it = pyfirmata.util.Iterator(b)
 it.start()
 pin = b.get_pin('d:2:s')
 #b.digital[2].write(0)
-pin.write(0)
+pin.write(90)
 
 Hands = mp.solutions.hands
 Draw = mp.solutions.drawing_utils
