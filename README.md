@@ -2,7 +2,9 @@
 This repository shows how to integrate artificial intelligence libraries such as mediapipe
 with Arduino Nano.
 
-Three Python programs (fingersw.py, fvsw.py, fvswt.py) are disclosed.
+Three Python programs (fingersw.py, fvsw.py, fvswt.py) are to control an LED.
+
+fservo.py is to control a servo with digital pin#2 on Arduino by index-finger-tip.
 
 # fingersw.py
 fingersw.py works with 1_0LED.ino arduino.
@@ -27,4 +29,7 @@ fvswt.py works with firmata arduino.
 In fvswt.py, placing the tip of your index finger on the upper left corner 
 toggles the LED-lighting.
 
-
+# fservo.py
+fservo.py works with firmata arduino.
+In fservo.py, moving the tip of your index finger with the horizontal axis
+can rotate the servo.
