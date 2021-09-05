@@ -52,7 +52,6 @@ class HandDetector:
                 Draw.draw_landmarks(originalImage, hand, Hands.HAND_CONNECTIONS)
         return landMarkList
 
-
 handDetector = HandDetector(min_detection_confidence=0.7)
 
 def main():
@@ -81,7 +80,7 @@ def main():
             count = count+1
         if handLandmarks[20][2] < handLandmarks[18][2]:     #Little finger
             count = count+1
-        x=handLandmarks[8][1]
+        x=int(handLandmarks[8][1]/3)
         y=handLandmarks[8][2]
     cv2.putText(image, str(count), (45, 375), cv2.FONT_HERSHEY_SIMPLEX, 5, (255, 0, 0), 25)
     cv2.putText(image, "x="+str(x), (85, 125), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 5)
