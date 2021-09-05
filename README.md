@@ -35,7 +35,7 @@ get_pin('d:2:s') means that pin#2 is used for digital servo.
 In fvsw.py, when placing the tip of your index finger on the upper left corner, 
 the LED will light up.
 
-<img src="https://github.com/ytakefuji/virtual_switch/blob/main/r.gif" width=270 height=240>
+<img src="https://github.com/ytakefuji/virtual_switch/blob/main/r.gif" width=320 height=240>
 
 # fvswt.py
 fvswt.py works with firmata arduino.
