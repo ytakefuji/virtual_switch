@@ -9,7 +9,6 @@ import os
 import serial
 from time import sleep
 import pyfirmata
-from time import sleep
 b=pyfirmata.Arduino('COM3')
 
 Hands = mp.solutions.hands
@@ -49,11 +48,15 @@ class HandDetector:
 
 
 handDetector = HandDetector(min_detection_confidence=0.7)
+import time
+duration=10
+start=time.time()
+out=cv2.VideoWriter("r.avi",cv2.VideoWriter_fourcc(*'XVID'),10,(640,480))
 
 def main():
  ledstate=0
  cam = cv2.VideoCapture(0)
- while True:
+ while (int(time.time()-start)<duration):
     status, image = cam.read()
     image =cv2.flip(image,1)
     handLandmarks = handDetector.findHandLandMarks(image=image, draw=True)
@@ -78,23 +81,25 @@ def main():
             count = count+1
         x=handLandmarks[8][1]
         y=handLandmarks[8][2]
-    cv2.putText(image, str(count), (45, 375), cv2.FONT_HERSHEY_SIMPLEX, 5, (255, 0, 0), 25)
-    cv2.putText(image, "x="+str(x), (85, 125), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 5)
-    cv2.putText(image, "y="+str(y), (245, 125), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 5)
-    if (x>10 and x<85) and (y>10 and y<100):
-     cv2.rectangle(image, (10, 10), (80, 80), (0,255,0), 25)
+    cv2.putText(image, str(count), (400, 375), cv2.FONT_HERSHEY_SIMPLEX, 5, (255, 0, 0), 15)
+    cv2.putText(image, "x="+str(x), (185, 125), cv2.FONT_HERSHEY_SIMPLEX, 2, (255, 0, 0), 8)
+    cv2.putText(image, "y="+str(y), (400, 125), cv2.FONT_HERSHEY_SIMPLEX, 2, (255, 0, 0), 8)
+    if (x>110 and x<180) and (y>10 and y<80):
+     cv2.rectangle(image, (110, 10), (180, 80), (0,255,0), 25)
      b.digital[2].write(1)
     else:
-     cv2.rectangle(image, (10, 10), (80, 80), (0,255,0), 5)
+     cv2.rectangle(image, (110, 10), (180, 80), (0,255,0), 5)
      b.digital[2].write(0)
     cv2.imshow("result", image)
     cv2.moveWindow("result",200,200)
-    cv2.setWindowProperty("result", cv2.WND_PROP_TOPMOST, 1)    
+    cv2.setWindowProperty("result", cv2.WND_PROP_TOPMOST, 1)
+    out.write(image)    
     if cv2.waitKey(1) == ord('q'):
      cam.release()
      cv2.destroyWindow("result")
      break
-
+ cam.release()
+ cv2.destroyAllWindows()
 
 if __name__ == '__main__':
  main()
