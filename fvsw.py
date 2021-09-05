@@ -48,15 +48,11 @@ class HandDetector:
 
 
 handDetector = HandDetector(min_detection_confidence=0.7)
-import time
-duration=10
-start=time.time()
-out=cv2.VideoWriter("r.avi",cv2.VideoWriter_fourcc(*'XVID'),10,(640,480))
 
 def main():
  ledstate=0
  cam = cv2.VideoCapture(0)
- while (int(time.time()-start)<duration):
+ while True:
     status, image = cam.read()
     image =cv2.flip(image,1)
     handLandmarks = handDetector.findHandLandMarks(image=image, draw=True)
@@ -93,13 +89,10 @@ def main():
     cv2.imshow("result", image)
     cv2.moveWindow("result",200,200)
     cv2.setWindowProperty("result", cv2.WND_PROP_TOPMOST, 1)
-    out.write(image)    
     if cv2.waitKey(1) == ord('q'):
      cam.release()
      cv2.destroyWindow("result")
      break
- cam.release()
- cv2.destroyAllWindows()
 
 if __name__ == '__main__':
  main()
