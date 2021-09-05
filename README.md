@@ -46,3 +46,5 @@ toggles the LED-lighting.
 fservo.py works with firmata arduino.
 In fservo.py, moving the tip of your index finger with the horizontal axis
 can rotate the servo.
+
+<img src="https://github.com/ytakefuji/virtual_switch/blob/main/s.gif" width=320 height=240>
