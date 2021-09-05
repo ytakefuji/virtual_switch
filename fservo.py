@@ -9,7 +9,6 @@ import os
 import serial
 from time import sleep
 import pyfirmata
-from time import sleep
 b=pyfirmata.Arduino('COM3')
 it = pyfirmata.util.Iterator(b)
 it.start()
