@@ -1,6 +1,9 @@
 # firmataled.py
+firmataled.py is a LED flashing program with digital write 1 and 0 on digital pin#2 with
+a delay of one second.
 
 # firmataled2.py
+firmataled2.py is a analog read program from analog pin #5.
 
 # virtual_switch
 This repository shows how to integrate artificial intelligence libraries such as mediapipe
