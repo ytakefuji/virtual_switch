@@ -5,6 +5,10 @@ a delay of one second.
 # firmataled2.py
 firmataled2.py is a analog read program from analog pin #5.
 
+# hand landmarks
+
+<img src="hand.png" height=260 width=770 >
+
 # virtual_switch
 This repository shows how to integrate artificial intelligence libraries such as mediapipe
 with Arduino Nano.
